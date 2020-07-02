@@ -1,0 +1,39 @@
+{{ define "post-list" }}
+
+{{ template "head" }}
+
+    <body class="bg-light">
+        {{ template "nav-bar" }}
+
+        <div class="container">
+            <div class="row h-100">
+                <div class="col-sm-2">
+                </div>
+                <div class="col-sm-8 bg-light text-center p-3">
+                    <h2 class="mb-4"><a class="text-info" href="/post/new" style="text-decoration-color: black; text-decoration-line: none">New post</a></h2>
+                    <hr class="mt-4 mb-4">
+                    {{ range $key, $value := . }}
+                        <div class="container mb-4">
+                            <div class="row">
+                                <div class="col-sm-2"></div>
+                                <h2 class="col-sm-8 m-0 text-info">{{ $value.Title }}</h2>
+                                <a class="col-sm-1" href="/post/edit?id={{$value.Id}}" style="float: right">
+                                    <img class="w-100" src="/assets/photos/pencil.png">
+                                </a>
+                                <a class="col-sm-1" href="/post/delete?id={{$value.Id}}" style="float: right">
+                                    <img class="w-100" src="/assets/photos/delete.png">
+                                </a>
+                            </div>
+                            <p class="bg-light w-100 m-0 text-left p-1">{{ $value.Content }}</p>
+                        </div>
+                        <hr class="mb-4">
+                        <br>
+                    {{end}}
+                </div>
+                <div class="col-sm-2">
+                </div>
+            </div>
+        </div>
+    </body>
+
+{{ end }}

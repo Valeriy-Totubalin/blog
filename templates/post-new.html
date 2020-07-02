@@ -1,0 +1,27 @@
+{{ define "post-new" }}
+
+{{ template "head" }}
+
+    <body>
+        {{ template "nav-bar" }}
+
+        <div class="container">
+            <div class="row h-100">
+                <div class="col-sm-2">
+                </div>
+                <div class="col-sm-8 bg-info text-center p-3">
+                    <form class="p-3 mt-5" action="/post/write">
+                        <label class="text-white">Title</label>
+                        <input class="row w-100 m-0" type="text" name="title">
+                        <label class="text-white mt-2">Content</label>
+                        <textarea class="row w-100 m-0" style="height: 250px" name="content"></textarea>
+                        <button class="text-white mt-2 bg-dark">Отправить</button>
+                    </form>
+                </div>
+                <div class="col-sm-2">
+                </div>
+            </div>
+        </div>
+    </body>
+
+{{ end }}

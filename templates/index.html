@@ -1,0 +1,22 @@
+{{ define "index" }}
+
+{{ template "head" }}
+
+    <body class="bg-light">
+        {{template "nav-bar"}}
+
+        <div class="container">
+            <div class="row h-100">
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-10 bg-info text-center p-3">
+                    <p class="text-white">Hello, World! Its my first project on Golang</p>
+                    <img class="w-100" src="/assets/photos/golang.jpg">
+                </div>
+                <div class="col-sm-1">
+                </div>
+            </div>
+        </div>
+    </body>
+
+{{ end }}
